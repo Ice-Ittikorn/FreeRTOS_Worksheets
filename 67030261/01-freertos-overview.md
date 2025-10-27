@@ -37,4 +37,17 @@
   - สามารถตั้งได้เป็น `NONE`, `ERROR`, `WARN`, `INFO`, `DEBUG`, `VERBOSE`
 
 # Lab 3: สร้าง Task แรกด้วย FreeRTOS
+
 ## คำถามทบทวน
+1. เหตุใด Task function ต้องมี infinite loop?
+   - เพราะใน FreeRTOS โค้ดของ task ถ้า return ไปแล้ว ตัว scheduler ไม่ได้เตรียมจัดการคืนค่าหรือปิด task อัตโนมัติ ดังนั้นจึงต้องอยู่ใน loop ตลอด เพื่อไม่ให้ task จบหน้าที่โดยไม่ตั้งใจ 
+2. ความหมายของ stack size ใน xTaskCreate() คืออะไร?
+   - คือขนาดของ stack memory ที่แยกให้กับ task นั้นใช้ (รวมฟังก์ชัน, ตัวแปรภายใน task) ถ้าให้เล็กเกินไป อาจเกิด stack overflow ได้
+3. ความแตกต่างระหว่าง vTaskDelay() และ vTaskDelayUntil()?
+   - vTaskDelay() บอกให้ task บล็อกไปเป็นเวลาที่กำหนด จากเวลาปัจจุบัน 
+   - vTaskDelayUntil() บอกให้ task บล็อกจนถึง เวลาที่กำหนดแบบ absolute เพื่อให้ task ทำงานแบบ period ที่คงที่
+4. การใช้ vTaskDelete(NULL) vs vTaskDelete(handle) ต่างกันอย่างไร?
+   - vTaskDelete(NULL) จะลบ (terminate) task ที่เรียกใช้งานอยู่ตอนนั้น
+   - vTaskDelete(handle) จะลบ task ที่มี handle ระบุไว้ (อาจเป็น task อื่น)
+5. Priority 0 กับ Priority 24 อันไหนสูงกว่า?
+   - ค่า priority ที่ “สูงกว่า” คือมีตัวเลข มากกว่า ดังนั้น Priority 24 สูงกว่า Priority 0
