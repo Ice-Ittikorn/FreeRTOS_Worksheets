@@ -18,3 +18,22 @@
         gpio_set_level(LED_SENDER, 0);      // ปิดไฟ LED
     }
     ```
+# Lab 2: Producer-Consumer System 
+### คำถามสำหรับการทดลอง
+1. ในทดลองที่ 2 เกิดอะไรขึ้นกับ Queue?
+  - เมื่อเพิ่ม ผู้ผลิต (Producers) จาก 3 เป็น 4 แต่ยังคงมีผู้บริโภค (Consumers) เพียง 2 ตัว ผลิตสินค้าเร็วกว่าอัตราการบริโภค
+  - Queue จะเต็มบ่อยมาก (xQueueSend ส่งไม่ทัน → มีการ drop ข้อมูล)
+  - ใน Serial Monitor จะเห็นข้อความ
+  ```
+  ✗ Producer X: Queue full! Dropped Product-PX-#Y
+  ⚠️ HIGH LOAD DETECTED! Queue size: 10
+  ```
+  - แสดงว่าระบบเกิด “Queue Overflow”และ Load Balancer จะแจ้งเตือนว่าควรเพิ่ม Consumer หรือเพิ่ม Buffer
+2. ในทดลองที่ 3 ระบบทำงานเป็นอย่างไร?
+  - ลดจำนวน ผู้บริโภค (Consumers) จาก 2 เหลือ 1
+  - ทำให้ Consumer ทำงานช้ากว่าการผลิต → Queue สะสมข้อมูลมากขึ้นเรื่อย ๆ
+  - สุดท้าย Queue จะเต็มบ่อย → มี Dropped Products เพิ่มขึ้นมาก
+  - Efficiency ลดลงต่ำ (~59%) เพราะสินค้าที่ผลิตถูก drop ไปก่อนถูกใช้
+  - ระบบทำงานช้าลงโดยรวม (เพราะ consumer เดียวต้องประมวลผลทั้งหมด)
+3. Load Balancer แจ้งเตือนเมื่อไหร่?
+  - Queue มีข้อมูล มากกว่า 8 รายการ
