@@ -1,3 +1,6 @@
+#คำตอบของทุกlab ใส้ใว้ใน โฟเดอร์ 67030261 ครับ
+
+
 # FreeRTOS Learning Materials for ESP-IDF
 
 เนื้อหาและใบงานการเรียนรู้ FreeRTOS สำหรับแพลตฟอร์ม ESP-IDF พัฒนาด้วย VS Code ผ่าน Terminal โดยใช้ `idf.py`
