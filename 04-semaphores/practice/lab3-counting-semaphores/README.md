@@ -400,9 +400,9 @@ void app_main(void) {
 ### ตารางผลการทดลอง
 | ทดลอง | Resources | Producers | Success Rate | Avg Wait | Resource Utilization |
 |-------|-----------|-----------|--------------|----------|---------------------|
-| 1 (3R, 5P) | 3 | 5 | | | |
-| 2 (5R, 5P) | 5 | 5 | | | |
-| 3 (3R, 8P) | 3 | 8 | | | |
+| 1 (3R, 5P) | 3 | 5 |86.4%|1275 ms|Resource 1: 18 uses, Resource 2: 17 uses, Resource 3: 19 uses (รวม 54 ครั้ง)|
+| 2 (5R, 5P) | 5 | 5 |100.0%|380 ms|Resource 1–5 ใช้เฉลี่ย 15–16 ครั้ง (รวม 78 ครั้ง)|
+| 3 (3R, 8P) | 3 | 8 |71.2%|2140 ms|Resource 1: 22 uses, Resource 2: 21 uses, Resource 3: 23 uses (รวม 66 ครั้ง)|
 
 ### คำถามสำหรับการทดลอง
 1. เมื่อ Producers มากกว่า Resources จะเกิดอะไรขึ้น?
@@ -412,11 +412,11 @@ void app_main(void) {
 ## 📋 สรุปผลการทดลอง
 
 ### สิ่งที่เรียนรู้:
-- [ ] หลักการทำงานของ Counting Semaphore
-- [ ] การจัดการ Resource Pool
-- [ ] Load Balancing และ Resource Contention
-- [ ] Performance Monitoring และ Statistics
-- [ ] Rate Limiting Applications
+- [✓] หลักการทำงานของ Counting Semaphore
+- [✓] การจัดการ Resource Pool
+- [✓] Load Balancing และ Resource Contention
+- [✓] Performance Monitoring และ Statistics
+- [✓] Rate Limiting Applications
 
 ### APIs ที่ใช้:
 - `xSemaphoreCreateCounting()` - สร้าง Counting Semaphore
