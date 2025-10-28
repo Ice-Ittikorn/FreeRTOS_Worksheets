@@ -73,22 +73,22 @@ CONFIG_FREERTOS_TIMER_QUEUE_LENGTH=10
 ## 🎖️ ตัวชี้วัดความสำเร็จ
 
 ### Lab 1 - Basic Timers ✅
-- [ ] สร้าง One-shot และ Auto-reload Timers
-- [ ] เข้าใจ Timer Callbacks
-- [ ] จัดการ Timer States (Start/Stop/Reset)
-- [ ] แสดงผล Timer Statistics
+- [✓] สร้าง One-shot และ Auto-reload Timers
+- [✓] เข้าใจ Timer Callbacks
+- [✓] จัดการ Timer States (Start/Stop/Reset)
+- [✓] แสดงผล Timer Statistics
 
 ### Lab 2 - Timer Applications ✅
-- [ ] พัฒนาระบบ Watchdog Timer
-- [ ] สร้าง LED Pattern Controller
-- [ ] ออกแบบ Sensor Sampling System
-- [ ] จัดการ Multiple Timer Coordination
+- [✓] พัฒนาระบบ Watchdog Timer
+- [✓] สร้าง LED Pattern Controller
+- [✓] ออกแบบ Sensor Sampling System
+- [✓] จัดการ Multiple Timer Coordination
 
 ### Lab 3 - Advanced Management ✅
-- [ ] เพิ่มประสิทธิภาพ Timer Performance
-- [ ] สร้าง Timer Health Monitoring
-- [ ] จัดการ Timer Resource Management
-- [ ] สร้างระบบ Error Recovery
+- [✓] เพิ่มประสิทธิภาพ Timer Performance
+- [✓] สร้าง Timer Health Monitoring
+- [✓] จัดการ Timer Resource Management
+- [✓] สร้างระบบ Error Recovery
 
 ## 📊 Tips & Best Practices
 
